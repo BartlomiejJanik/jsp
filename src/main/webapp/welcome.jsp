@@ -12,5 +12,8 @@
 </head>
 <body>
     <h1><% out.print("Hello world"); %></h1>
+    <p>
+        Dzisiaj jest <%= java.time.LocalDateTime.now().toString() %>
+    </p>
 </body>
 </html>
