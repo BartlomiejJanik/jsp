@@ -22,6 +22,8 @@
     <h2>
         Licznik odwiedzin:<%= ++visitCount%>
     </h2>
+    <%-- Komentarz JSP --%>
+    <!-- Komentarz HTML -->
 
 </body>
 </html>
