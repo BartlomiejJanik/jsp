@@ -8,13 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Search</title>
+    <title>Obsługa ciasteczek</title>
 </head>
 <body>
-    <p>
-        Szukane słowo: <b><%= request.getParameter("query")%></b><br/>
-        Strona: <b><%= request.getParameter("page")%></b><br/>
-        Sortowanie: <b><%= "desc".equals(request.getParameter("sort")) ? "malejąco" : "rosnąco"%></b><br/>
-    </p>
+<%
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        out.print("<h2>Found Cookies<h2/>");
+        for (Cookie cookie : cookies) {
+            out.println("Name: " + cookie.getName() + ", ");
+            out.println("Value: " + cookie.getValue() + "<br/>");
+        }
+    }else{
+        out.print("Not found any cookies");
+    }
+%>
 </body>
 </html>
