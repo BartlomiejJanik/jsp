@@ -1,7 +1,12 @@
 package pl.sda;
 
+import lombok.Setter;
+
+@Setter
 public class Calculator {
-    public int square(int n) {
+    private int n;
+
+    public int square() {
         return n * n;
     }
 }
