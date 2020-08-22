@@ -8,10 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Redirected page</title>
+    <title>
+        Redirected page
+    </title>
 </head>
 <body>
-<p>Redirected page</p>
+<p>
+    Redirected page
+</p>
 <jsp:include page="included.jsp"/>
 <p>
     Mój parametr to: <%= request.getParameter("myParam")%>
