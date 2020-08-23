@@ -1,6 +1,10 @@
 package pl.sda.servlet;
 
 
+
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +18,12 @@ import java.io.PrintWriter;
                 @WebInitParam(name = "localization", value = "Poland")}, loadOnStartup = 1)
 public class HelloWorldServlet extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         PrintWriter writer = response.getWriter();
         writer.println("Id: " + getInitParameter("id"));
         writer.println("Localization: " + getInitParameter("localization"));
+        response.sendRedirect("empty.jsp");
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("empty.jsp");
+//        dispatcher.forward(request,response);
     }
 }
